@@ -10,3 +10,11 @@ describe('GET /hello', () => {
     });
 });
 
+
+describe('GET /whoareyou', () => {
+    it('should return Привет, Я Приложение для Лабораторной 1!', async () => {
+        const res = await request(app).get('/whoareyou');
+        expect(res.status).to.equal(200);
+        expect(res.body).to.deep.equal({ message: 'Привет, Я Приложение для Лабораторной 1!' });
+    });
+});
